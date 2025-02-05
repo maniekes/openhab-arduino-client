@@ -1,0 +1,25 @@
+{
+    "name": "OHclient",
+    "version": "1.0.0",
+    "description": "simple OpenHab rest client",
+    "keywords": "planet, happiness, people",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/username/hello-world.git"
+    },
+    "authors":
+    [
+      {
+        "name": "Rafal Klimonda",
+        "email": "maniekes@gmail.com",
+        "url": "klimonda.pl"
+      }
+    ],
+    "license": "MIT",
+    "homepage": "https://www.helloworld.org/",
+    "dependencies": {
+    },
+    "frameworks": "arduino",
+    "platforms": "*"
+  }
