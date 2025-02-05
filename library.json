@@ -1,12 +1,12 @@
 {
-    "name": "OHclient",
+    "name": "OpenHABClient",
     "version": "1.0.0",
     "description": "simple OpenHab rest client",
     "keywords": "planet, happiness, people",
     "repository":
     {
       "type": "git",
-      "url": "https://github.com/username/hello-world.git"
+      "url": "https://github.com:maniekes/openhab-arduino-client.git"
     },
     "authors":
     [
@@ -17,7 +17,7 @@
       }
     ],
     "license": "MIT",
-    "homepage": "https://www.helloworld.org/",
+    "homepage": "https://github.com/maniekes/openhab-arduino-client",
     "dependencies": {
     },
     "frameworks": "arduino",

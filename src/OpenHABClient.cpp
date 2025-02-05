@@ -1,4 +1,4 @@
-#include "OHClient.h"
+#include "OpenHABClient.h"
 
 OpenHABClient::OpenHABClient(const char* server) {
     openhabServer = String(server);
