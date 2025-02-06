@@ -1,25 +1,22 @@
 {
-    "name": "OpenHABClient",
-    "version": "1.0.0",
-    "description": "simple OpenHab rest client",
-    "keywords": "planet, happiness, people",
-    "repository":
+  "name": "OpenHABClient",
+  "version": "1.0.0",
+  "description": "simple OpenHab rest client",
+  "keywords": "planet, happiness, people",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:maniekes/openhab-arduino-client.git"
+  },
+  "authors": [
     {
-      "type": "git",
-      "url": "https://github.com:maniekes/openhab-arduino-client.git"
-    },
-    "authors":
-    [
-      {
-        "name": "Rafal Klimonda",
-        "email": "maniekes@gmail.com",
-        "url": "klimonda.pl"
-      }
-    ],
-    "license": "MIT",
-    "homepage": "https://github.com/maniekes/openhab-arduino-client",
-    "dependencies": {
-    },
-    "frameworks": "arduino",
-    "platforms": "*"
-  }
+      "name": "Rafal Klimonda",
+      "email": "maniekes@gmail.com",
+      "url": "klimonda.pl"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/maniekes/openhab-arduino-client",
+  "dependencies": {},
+  "frameworks": "arduino",
+  "platforms": "*"
+}

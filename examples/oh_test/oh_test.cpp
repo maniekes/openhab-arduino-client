@@ -1,6 +1,5 @@
 #include <OpenHABClient.h>
 
-
 #define WIFI_SSID "WIFI_SSID"
 #define WIFI_PASS "WIFI_PASS"
 #define OH_TOKEN "your-token-here"
@@ -11,8 +10,7 @@ OpenHABClient *ohclient;
 void connectToWiFi() {
   WiFi.begin(WIFI_SSID, WIFI_PASS);
   Serial.print("Connecting to WiFi...");
-  while (WiFi.status() != WL_CONNECTED)
-  {
+  while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
     delay(500);
   }
@@ -24,11 +22,10 @@ void initOH() {
   ohclient->setBearerToken(OH_TOKEN);
 }
 
-
 void setup() {
-    Serial.begin(115200);
-    connectToWiFi();
-    initOH();
+  Serial.begin(115200);
+  connectToWiFi();
+  initOH();
 }
 
 void loop() {
