@@ -39,9 +39,9 @@ public:
             updateItemState(item, state ? "ON":"OFF");
     };
 
-private:
-    String openhabServer;
-    String authHeader;
+protected:
+    String _server;
+    String _authHeader;
 };
 
 #endif
