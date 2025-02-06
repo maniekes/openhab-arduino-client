@@ -1,7 +1,17 @@
 #include "OpenHABClient.h"
+#include <base64.h> 
 
-OpenHABClient::OpenHABClient(const char* server) {
-    openhabServer = String(server);
+OpenHABClient::OpenHABClient(const String& server) {
+    openhabServer = server;
+}
+
+void OpenHABClient::setAuth(const String& username, const String& password) {
+    String credentials = username + ":" + password;
+    authHeader = "Basic " + base64::encode(credentials);
+}
+
+void OpenHABClient::setBearerToken(const String& token) {
+    authHeader = "Bearer " + String(token);
 }
 
 String OpenHABClient::getItemState(const String& item) {
@@ -10,6 +20,8 @@ String OpenHABClient::getItemState(const String& item) {
     HTTPClient http;
     String url = openhabServer + "/rest/items/" + item + "/state";
     http.begin(url);
+    if (!authHeader.isEmpty()) http.addHeader("Authorization", authHeader);
+
     int httpCode = http.GET();
 
     String payload = (httpCode == 200) ? http.getString() : "Error: " + String(httpCode);
@@ -23,6 +35,7 @@ bool OpenHABClient::sendCommand(const String& item, const String& command) {
     HTTPClient http;
     String url = openhabServer + "/rest/items/" + item;
     http.begin(url);
+    if (!authHeader.isEmpty()) http.addHeader("Authorization", authHeader);
     http.addHeader("Content-Type", "text/plain");
 
     int httpCode = http.POST(command);
@@ -37,6 +50,7 @@ bool OpenHABClient::updateItemState(const String& item, const String& state) {
     HTTPClient http;
     String url = openhabServer + "/rest/items/" + item + "/state";
     http.begin(url);
+    if (!authHeader.isEmpty()) http.addHeader("Authorization", authHeader);
     http.addHeader("Content-Type", "text/plain");
 
     int httpCode = http.PUT(state);
