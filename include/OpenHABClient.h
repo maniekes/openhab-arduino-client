@@ -57,6 +57,17 @@ class OpenHABClient {
   }
 
   /**
+   * @brief Gets the state of the specified item as a uint64_t.
+   * @param item The name of the item.
+   * @return The state of the item as a uint64_t.
+   */
+  uint64_t getItemStateUll(const String& item) {
+    String state = getItemState(item);
+    state.trim();
+    return static_cast<uint64_t>(state.toDouble());
+  }
+
+  /**
    * @brief Gets the state of the specified item as a float.
    * @param item The name of the item.
    * @return The state of the item as a float.
